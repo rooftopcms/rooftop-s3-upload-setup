@@ -18,7 +18,7 @@
         <table class="form-table">
             <tr>
                 <th scope="row">
-                    Access Key ID
+                    Access Key ID *
                 </th>
                 <td>
                     <input type="text" name="access_key_id" size="40" value="<?php echo isset($access_key_id) ? $access_key_id : '' ?>"/>
@@ -26,10 +26,29 @@
             </tr>
             <tr>
                 <th scope="row">
-                    Secret Access Key
+                    Secret Access Key *
                 </th>
                 <td>
                     <input type="text" name="secret_access_key" size="40" value="<?php echo (isset($secret_access_key) && $secret_access_key) ? $secret_access_key : '' ?>"/>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    Cloudfront domain
+
+                    <br/>
+                    <span class="label">
+                        Bucket: <br/>
+                        <span class="small"><?php echo $current_bucket; ?>.s3-eu-west-1</span>
+                    </span>
+
+                </th>
+                <td>
+                    <input type="text" name="cloudfront_domain" size="40" value="<?php echo (isset($cloudfront_domain) && $cloudfront_domain) ? $cloudfront_domain : '' ?>"/>
+                    <br/>
+                    <?php if($cloudfront_domain): ?>
+                        &nbsp;&nbsp;<?php echo $cloudfront_domain;?>/wp-content/uploads/path.jpg
+                    <?php endif;?>
                 </td>
             </tr>
         </table>

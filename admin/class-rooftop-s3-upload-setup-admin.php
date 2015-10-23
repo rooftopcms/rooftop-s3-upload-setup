@@ -159,6 +159,7 @@ class Rooftop_S3_Offload_Setup_Admin {
             case 'POST':
                 update_blog_option($blog_id, 'access_key_id', $_POST['access_key_id']);
                 update_blog_option($blog_id, 'secret_access_key', $_POST['secret_access_key']);
+                update_blog_option($blog_id, 'cloudfront_domain', $_POST['cloudfront_domain']);
 
                 if( ! defined('AWS_ACCESS_KEY_ID') ) {
                     define('AWS_ACCESS_KEY_ID', $_POST['access_key_id']);
@@ -168,8 +169,8 @@ class Rooftop_S3_Offload_Setup_Admin {
                     define('AWS_SECRET_ACCESS_KEY', $_POST['secret_access_key']);
                 }
 
-//                $current_bucket = get_blog_option($blog_id, 'bucket');
-//                if(! $current_bucket ) {
+                $current_bucket = get_blog_option($blog_id, 'bucket');
+                if(! $current_bucket ) {
                     $bucket = 'rooftop.site.'.get_current_blog_id();
                     $bucket = apply_filters( 'as3cf_setting_bucket', $bucket );
 
@@ -200,12 +201,13 @@ class Rooftop_S3_Offload_Setup_Admin {
                     // need to a reload since we're potentially adding the the Media
                     // menu, but the hook for that has already been called at this point
                     echo "<script>window.location.reload()</script>";
-//                }
+                }
 
                 break;
             case 'DELETE':
                 delete_blog_option($blog_id, 'access_key_id');
                 delete_blog_option($blog_id, 'secret_access_key');
+                delete_blog_option($blog_id, 'cloudfront_domain');
                 break;
         }
 
@@ -220,6 +222,7 @@ class Rooftop_S3_Offload_Setup_Admin {
         $blog_id = get_current_blog_id();
         $access_key_id = get_blog_option($blog_id, 'access_key_id');
         $secret_access_key = get_blog_option($blog_id, 'secret_access_key');
+        $cloudfront_domain = get_blog_option($blog_id, 'cloudfront_domain');
         $current_bucket = get_blog_option($blog_id, 'bucket');
 
         require_once plugin_dir_path( __FILE__ ) . 'partials/rooftop-s3-upload-setup-admin-display.php';

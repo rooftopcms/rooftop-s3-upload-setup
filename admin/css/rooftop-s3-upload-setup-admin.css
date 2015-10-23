@@ -1,4 +1,7 @@
-/**
- * All of the CSS for your admin-specific functionality should be
- * included in this file.
- */
+th .label {
+    font-size: 0.8em;
+}
+
+th .label span {
+
+}
