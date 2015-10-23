@@ -122,7 +122,11 @@ class Rooftop_S3_Offload_Setup_Public {
     /**
      * implement wp-upload-s3's as3cf_setting_bucket hook to return our own
      */
-    public function get_s3_bucket_name() {
+    public function get_s3_bucket_name($bucket) {
+        if("rooftop.main" === $bucket) {
+            return $bucket;
+        }
+
         $blog_id = get_current_blog_id();
         $options = get_blog_details($blog_id, 'domain', false);
         $domain = $options->domain;

@@ -47,7 +47,7 @@
                     <input type="text" name="cloudfront_domain" size="40" value="<?php echo (isset($cloudfront_domain) && $cloudfront_domain) ? $cloudfront_domain : '' ?>"/>
                     <br/>
                     <?php if($cloudfront_domain): ?>
-                        &nbsp;&nbsp;<?php echo $cloudfront_domain;?>/wp-content/uploads/path.jpg
+                        Example url: &nbsp;&nbsp;<?php echo $cloudfront_domain;?>/wp-content/uploads/path.jpg
                     <?php endif;?>
                 </td>
             </tr>
