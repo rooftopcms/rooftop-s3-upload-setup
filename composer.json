@@ -1,0 +1,21 @@
+{
+    "name": "rooftopcms/rooftop-s3-upload-setup",
+    "description": "Allows sites in a network to define their own S3 credentials",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Rooftop CMS",
+            "email": "hello@rooftopcms.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://wpackagist.org"
+        }
+    ],
+    "type": "wordpress-muplugin",
+    "require": {
+        "wpackagist-plugin/amazon-s3-and-cloudfront": "0.9.6"
+    }
+}
