@@ -133,21 +133,8 @@ class Rooftop_S3_Offload_Setup_Public {
         $sub_domain = explode(".", $domain)[0];
 
         $sub_domain = preg_replace("/[^a-zA-Z0-9]/", "", $sub_domain);
-        $bucket = "rooftop.site.".$sub_domain;
+        $bucket = $sub_domain.".media.rooftop.io";
 
         return $bucket;
-    }
-
-    public function get_s3_attachment_url($url) {
-        $blog_id = get_current_blog_id();
-        $cloudfront_domain = get_blog_option($blog_id, 'cloudfront_domain');
-
-        if($cloudfront_domain) {
-            $_url = parse_url($url);
-
-            $url = $cloudfront_domain.$_url['path'];
-        }
-
-        return $url;
     }
 }

@@ -175,7 +175,6 @@ class Rooftop_S3_Offload_Setup {
         $this->loader->add_action( 'init', $plugin_public, 'define_s3_keys' );
 
         $this->loader->add_filter( 'as3cf_setting_bucket', $plugin_public, 'get_s3_bucket_name' );
-        $this->loader->add_filter( 'as3cf_wp_get_attachment_url', $plugin_public, 'get_s3_attachment_url' );
 	}
 
 	/**
