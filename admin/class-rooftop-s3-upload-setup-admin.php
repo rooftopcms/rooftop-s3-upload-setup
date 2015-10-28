@@ -3,16 +3,6 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://github.com/rooftopcms
- * @since      1.0.0
- *
- * @package    Rooftop_S3_Offload_Setup
- * @subpackage Rooftop_S3_Offload_Setup/admin
- */
-
-/**
- * The admin-specific functionality of the plugin.
- *
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
@@ -20,6 +10,7 @@
  * @subpackage Rooftop_S3_Offload_Setup/admin
  * @author     Error <hello@rooftopcms.com>
  */
+
 class Rooftop_S3_Offload_Setup_Admin {
 
 	/**
@@ -159,7 +150,6 @@ class Rooftop_S3_Offload_Setup_Admin {
             case 'POST':
                 update_blog_option($blog_id, 'access_key_id', $_POST['access_key_id']);
                 update_blog_option($blog_id, 'secret_access_key', $_POST['secret_access_key']);
-                update_blog_option($blog_id, 'cloudfront_domain', $_POST['cloudfront_domain']);
 
                 if( ! defined('AWS_ACCESS_KEY_ID') ) {
                     define('AWS_ACCESS_KEY_ID', $_POST['access_key_id']);
@@ -207,7 +197,6 @@ class Rooftop_S3_Offload_Setup_Admin {
             case 'DELETE':
                 delete_blog_option($blog_id, 'access_key_id');
                 delete_blog_option($blog_id, 'secret_access_key');
-                delete_blog_option($blog_id, 'cloudfront_domain');
                 break;
         }
 
@@ -222,7 +211,6 @@ class Rooftop_S3_Offload_Setup_Admin {
         $blog_id = get_current_blog_id();
         $access_key_id = get_blog_option($blog_id, 'access_key_id');
         $secret_access_key = get_blog_option($blog_id, 'secret_access_key');
-        $cloudfront_domain = get_blog_option($blog_id, 'cloudfront_domain');
         $current_bucket = get_blog_option($blog_id, 'bucket');
 
         require_once plugin_dir_path( __FILE__ ) . 'partials/rooftop-s3-upload-setup-admin-display.php';
