@@ -126,6 +126,14 @@ class Rooftop_S3_Offload_Setup_Public {
         $blog_id = get_current_blog_id();
         $bucket = get_blog_option($blog_id, 'bucket');
 
+        if( ! $bucket ) {
+            $details = get_blog_details($blog_id, 'domain', false);
+            $domain = $details->domain;
+            $sub_domain = explode(".", $domain)[0];
+
+            $bucket = "$sub_domain-media.rooftopcms.io";
+        }
+
         return $bucket;
     }
 }
