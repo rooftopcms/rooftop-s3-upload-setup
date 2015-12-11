@@ -107,7 +107,7 @@ class Rooftop_S3_Offload_Setup_Public {
     public function define_s3_keys() {
         $blog_id = get_current_blog_id();
 
-        if($blog_id) {
+        if( $blog_id && function_exists('get_blog_option') ) {
             $access_key_id = get_blog_option($blog_id, 'access_key_id');
             $secret_access_key = get_blog_option($blog_id, 'secret_access_key');
 
