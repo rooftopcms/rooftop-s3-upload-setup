@@ -131,7 +131,7 @@ class Rooftop_S3_Offload_Setup_Public {
             $domain = $details->domain;
             $sub_domain = explode(".", $domain)[0];
 
-            $bucket = "$sub_domain-media.rooftopcms.io";
+            $bucket = "$sub_domain.rooftop.io";
         }
 
         return $bucket;
