@@ -41,4 +41,25 @@
         </p>
 
     </form>
+    <?php if(isset($access_key_id) && isset($secret_access_key)) :?>
+    <h2>S3 bucket policy</h2>
+     <p>
+         Here's the policy you need to add to the <?php echo($current_bucket) ?> bucket in the S3 console:
+         <pre>
+            {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Sid": "AddPerm",
+                        "Effect": "Allow",
+                        "Principal": "*",
+                        "Action": "s3:GetObject",
+                        "Resource": "arn:aws:s3:::<?php echo($current_bucket) ?>/**"
+                    }
+                ]
+            }
+         </pre>
+     </p>
+     <p>You also need to set the bucket to allow web hosting.</p>
+    <?php endif?>
 </div>
