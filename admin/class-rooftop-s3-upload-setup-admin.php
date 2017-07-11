@@ -203,6 +203,10 @@ class Rooftop_S3_Offload_Setup_Admin {
         $this->rooftop_s3_form();
     }
 
+    public function rooftop_s3_admin_ui( $return ) {
+        return true;
+    }
+
     /**
      * render the form
      *

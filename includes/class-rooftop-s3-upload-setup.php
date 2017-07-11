@@ -156,6 +156,8 @@ class Rooftop_S3_Offload_Setup {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
         $this->loader->add_action( 'admin_menu', $plugin_admin, 'rooftop_s3_menu_links' );
+
+        $this->loader->add_action( 'as3cf_show_deprecated_domain_setting', $plugin_admin, 'rooftop_s3_admin_ui' );
 	}
 
 	/**
