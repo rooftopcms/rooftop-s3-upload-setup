@@ -15,12 +15,12 @@
  * @wordpress-plugin
  * Plugin Name:       Rooftop S3 Offload Setup
  * Plugin URI:        https://github.com/rooftopcms/rooftop-s3-offlet-setup
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           1.0.0
- * Author:            Error
+ * Description:       Rooftop admin UI for setting up S3 uploads.
+ * Version:           1.2.1
+ * Author:            RooftopCMS
  * Author URI:        https://github.com/rooftopcms
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License:           GPL-3.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       rooftop-s3-upload-setup
  * Domain Path:       /languages
  */
