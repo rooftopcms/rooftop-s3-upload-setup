@@ -16,7 +16,7 @@
  * Plugin Name:       Rooftop S3 Offload Setup
  * Plugin URI:        https://github.com/rooftopcms/rooftop-s3-offlet-setup
  * Description:       Rooftop admin UI for setting up S3 uploads.
- * Version:           1.2.1
+ * Version:           1.2.1.1
  * Author:            RooftopCMS
  * Author URI:        https://github.com/rooftopcms
  * License:           GPL-3.0+
