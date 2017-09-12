@@ -16,6 +16,6 @@
     ],
     "type": "wordpress-muplugin",
     "require": {
-        "wpackagist-plugin/amazon-s3-and-cloudfront": "1.1.6"
+        "wpackagist-plugin/amazon-s3-and-cloudfront": "0.9.12"
     }
 }
