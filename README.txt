@@ -34,6 +34,9 @@ Yes, it's a Wordpress plugin you're welcome to use outside the context of Roofto
 
 == Changelog ==
 
+= 1.2.1.1 =
+* Rollback CF dependency
+
 = 1.2.1 =
 * Tweak readme for packaging
 
